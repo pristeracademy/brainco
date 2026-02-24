@@ -22,6 +22,23 @@ namespace Brainco{
     }
     
     /**
+     * 獲取實時專注力讀數 (0-100)
+     */
+    //% block="Attention Value" blockId="GetAttentionRealValue"
+    export function get_Attention_Real_Value(): number {
+        let value = 0
+        serial.setRxBufferSize(1)
+        value = serial.readBuffer(1)[0]
+        
+        // 確保讀取到的數值在合理範圍內 (0-100)
+        if (value >= 0 && value <= 100) {
+            return value
+        } else {
+            return 0 // 若無效則回傳 0
+        }
+    }
+
+    /**
     * Low:Attention greater than 35,Middle:Attention greater than 50,High:Attention greater than 65.
     */
     //% block="Attention %level" blockId="GetAttentionValue"
