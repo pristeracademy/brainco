@@ -1,6 +1,3 @@
-
-> Open this page at [https://elecfreaks.github.io/pxt-brainco/](https://elecfreaks.github.io/pxt-brainco/)
-
 ## Use as Extension
 
 This repository can be added as an **extension** in MakeCode.
